@@ -17,8 +17,7 @@ const deleteTask = (list, name) => {
         console.log(row.id)
         const taskId = row.id;
         target.closest('tr').remove();
-        const elStor = removeStorage(taskId, name);
-        console.log(elStor);
+        removeStorage(taskId, name);
         getNumberRow(list, name);
       }
     }
