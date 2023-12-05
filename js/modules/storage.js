@@ -6,7 +6,7 @@ const setStorage = (key, data) => {
 
 const removeStorage = (taskId, key) => {
   const data = getStorage(key);
-  data.splice(data.filter(item => item.id !== taskId), 1);
+  data.splice(data.findIndex(item => item.id === taskId), 1);
   setStorage(key, data);
 };
 

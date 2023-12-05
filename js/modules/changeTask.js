@@ -8,16 +8,17 @@ const getNumberRow = (list) => {
   });
 };
 
-
 const deleteTask = (list, name) => {
   list.addEventListener('click', ({target}) => {
     if (target.classList.contains('btn-danger')) {
       const confirmQuestion = confirm('Вы хотите удалить задачу?');
       if (confirmQuestion) {
         const row = target.closest('tr').querySelector('.task');
+        console.log(row.id)
         const taskId = row.id;
         target.closest('tr').remove();
-        removeStorage(taskId, name);
+        const elStor = removeStorage(taskId, name);
+        console.log(elStor);
         getNumberRow(list, name);
       }
     }

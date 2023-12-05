@@ -2,7 +2,7 @@ import {getStorage, addTaskStorage} from './storage.js';
 import {createRow} from './create.js';
 
 const removeDisabledBtn = form => {
-  form.addEventListener('change', evt => {
+  form.addEventListener('input', evt => {
     const input = evt.target.classList.contains('form-control');
     if (input && input.value !== null) {
       const btn = form.querySelector('.btn-primary');
